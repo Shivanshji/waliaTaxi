@@ -18,7 +18,7 @@ export default function Footer() {
                     <div className="footer-brand">
                         <a href="#hero" className="logo footer-logo">
                             <TaxiLogo />
-                            SwiftRide Jalandhar
+                            WaliaTaxi
                         </a>
                         <p>Your trusted cab partner across Punjab. Safe, punctual, and always available — 24 hours a day.</p>
                     </div>
@@ -48,7 +48,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className="footer-bar">
-                &copy; 2025 SwiftRide Jalandhar. All rights reserved. &nbsp;|&nbsp; Made with ❤️ in Punjab
+                &copy; 2025 WaliaTaxi. All rights reserved. &nbsp;|&nbsp; Made with ❤️ in Punjab
             </div>
         </footer>
     );

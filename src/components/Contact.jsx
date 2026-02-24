@@ -30,7 +30,7 @@ export default function Contact() {
         const from = document.getElementById('ffrom').value;
         const to = document.getElementById('fto').value;
         const date = document.getElementById('fdate').value;
-        const msg = `Hi SwiftRide! I'd like to book a ride.\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n📍 From: ${from}\n📍 To: ${to}\n📅 Date: ${date}`;
+        const msg = `Hi WaliaTaxi! I'd like to book a ride.\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n📍 From: ${from}\n📍 To: ${to}\n📅 Date: ${date}`;
         window.open(`https://wa.me/919876543210?text=${encodeURIComponent(msg)}`, '_blank');
     };
 

@@ -29,7 +29,7 @@ export default function Navbar() {
             <div className="nav-inner container">
                 <a href="#hero" className="logo">
                     <TaxiLogo />
-                    SwiftRide Jalandhar
+                    WaliaTaxi
                 </a>
                 <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
                     <li><a href="#hero" onClick={closeMenu}>Home</a></li>

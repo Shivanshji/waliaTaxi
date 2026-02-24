@@ -30,7 +30,7 @@ export default function Features() {
     return (
         <section id="about" ref={ref}>
             <div className="container">
-                <h2 className="section-title fade-in">Why Choose SwiftRide?</h2>
+                <h2 className="section-title fade-in">Why Choose WaliaTaxi?</h2>
                 <span className="amber-line fade-in" />
                 <p className="section-subtitle fade-in">
                     Combining local knowledge with professional standards, we make every ride comfortable and reliable.

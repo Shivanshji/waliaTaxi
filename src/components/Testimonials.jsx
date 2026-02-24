@@ -16,7 +16,7 @@ const reviews = [
     },
     {
         stars: 5,
-        quote: '"We booked a Tempo Traveller for our family trip to Pathankot. It was comfortable, on time, and the driver was very helpful with luggage. Highly recommend SwiftRide!"',
+        quote: '"We booked a Tempo Traveller for our family trip to Pathankot. It was comfortable, on time, and the driver was very helpful with luggage. Highly recommend WaliaTaxi!"',
         name: 'Gurpreet Kaur',
         loc: 'Ludhiana, Punjab',
     },
@@ -47,7 +47,7 @@ export default function Testimonials() {
                 <h2 className="section-title fade-in">What Our Riders Say</h2>
                 <span className="amber-line fade-in" />
                 <p className="section-subtitle fade-in">
-                    Thousands of satisfied passengers across Punjab trust SwiftRide for every journey.
+                    Thousands of satisfied passengers across Punjab trust WaliaTaxi for every journey.
                 </p>
                 <div className="testi-grid">
                     {reviews.map((r) => (
