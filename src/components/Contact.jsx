@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import './Contact.css';
+
 
 export default function Contact() {
     const ref = useRef(null);

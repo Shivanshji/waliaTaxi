@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import './Cities.css';
+
 
 const cities = [
     { name: 'Jalandhar', price: 'Local Trip', img: 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=600&q=80' },

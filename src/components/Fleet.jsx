@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import './Fleet.css';
+
 
 const vehicles = [
     {

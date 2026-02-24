@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import './HowItWorks.css';
+
 
 const steps = [
     { num: 1, title: 'Call or WhatsApp Us', desc: 'Reach out anytime on +91 98765 43210 or message us on WhatsApp with your pickup details.' },

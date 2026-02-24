@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import './Testimonials.css';
+
 
 const reviews = [
     {
