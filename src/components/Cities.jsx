@@ -40,8 +40,7 @@ export default function Cities() {
                 <div className="cities-grid">
                     {cities.map((c) => (
                         <div className="city-card fade-in" key={c.name}>
-                            <img src={c.img} alt={c.name} loading="lazy" />
-                            <div className="city-overlay" />
+                            <img src={c.img} alt={c.name} loading="lazy" className="city-image" />
                             <div className="city-info">
                                 <span className="city-name">{c.name}</span>
                                 <span className="city-price">{c.price}</span>

@@ -25,7 +25,7 @@ export default function HowItWorks() {
     }, []);
 
     return (
-        <section id="how" ref={ref}>
+        <section id="how" className="how-section" ref={ref}>
             <div className="container">
                 <h2 className="section-title fade-in">How It Works</h2>
                 <span className="amber-line fade-in" />

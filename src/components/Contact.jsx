@@ -46,15 +46,15 @@ export default function Contact() {
                     <div className="contact-info fade-in">
                         <h3>Let's Connect</h3>
                         {[
-                            { icon: '📞', label: 'Phone', value: '+91 98765 43210', href: 'tel:+919876543210' },
-                            { icon: '💬', label: 'WhatsApp', value: '+91 98765 43210', href: 'https://wa.me/919876543210' },
-                            { icon: '📧', label: 'Email', value: 'info@swiftridejalandhar.com', href: 'mailto:info@swiftridejalandhar.com' },
-                            { icon: '📍', label: 'Address', value: 'GT Road, Jalandhar, Punjab – 144001' },
-                            { icon: '🕐', label: 'Hours', value: '24 hours, 7 days a week' },
+                            { icon: <svg className="svg-icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>, label: 'Phone', value: '+91 98765 43210', href: 'tel:+919876543210' },
+                            { icon: <svg className="svg-icon" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg>, label: 'WhatsApp', value: '+91 98765 43210', href: 'https://wa.me/919876543210' },
+                            { icon: <svg className="svg-icon" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>, label: 'Email', value: 'info@swiftridejalandhar.com', href: 'mailto:info@swiftridejalandhar.com' },
+                            { icon: <svg className="svg-icon" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg>, label: 'Address', value: 'GT Road, Jalandhar, Punjab – 144001' },
+                            { icon: <svg className="svg-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>, label: 'Hours', value: '24 hours, 7 days a week' },
                         ].map((item) => (
                             <div className="contact-item" key={item.label}>
-                                <span className="contact-icon">{item.icon}</span>
-                                <div>
+                                <div className="contact-icon-wrapper">{item.icon}</div>
+                                <div className="contact-item-text">
                                     <strong>{item.label}</strong>
                                     {item.href ? (
                                         <a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer">
@@ -95,7 +95,10 @@ export default function Contact() {
                                 <label htmlFor="fdate">Travel Date</label>
                                 <input type="date" id="fdate" required />
                             </div>
-                            <button type="submit" className="form-submit">🚖 Send Booking Request</button>
+                            <button type="submit" className="form-submit">
+                                <svg className="svg-icon" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z" /><path d="M22 2 11 13" /></svg>
+                                Send Booking Request
+                            </button>
                         </form>
                     </div>
                 </div>

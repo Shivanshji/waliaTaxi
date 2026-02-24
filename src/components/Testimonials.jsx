@@ -42,7 +42,7 @@ export default function Testimonials() {
     }, []);
 
     return (
-        <section id="testimonials" ref={ref}>
+        <section id="testimonials" className="testi-section" ref={ref}>
             <div className="container">
                 <h2 className="section-title fade-in">What Our Riders Say</h2>
                 <span className="amber-line fade-in" />
@@ -52,10 +52,19 @@ export default function Testimonials() {
                 <div className="testi-grid">
                     {reviews.map((r) => (
                         <div className="testi-card fade-in" key={r.name}>
-                            <div className="testi-stars">{'★'.repeat(r.stars)}</div>
+                            <div className="testi-stars">
+                                {Array(r.stars).fill(0).map((_, i) => (
+                                    <svg key={i} className="svg-icon" style={{ width: '18px', height: '18px' }} viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                                ))}
+                            </div>
                             <p className="testi-quote">{r.quote}</p>
-                            <p className="testi-author">{r.name}</p>
-                            <p className="testi-loc">{r.loc}</p>
+                            <div className="testi-author">
+                                <div className="testi-avatar">{r.name.charAt(0)}</div>
+                                <div className="testi-author-info">
+                                    <strong>{r.name}</strong>
+                                    <span>{r.loc}</span>
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>

@@ -12,7 +12,7 @@ const TaxiLogo = () => (
 
 export default function Footer() {
     return (
-        <footer id="footer">
+        <footer id="footer" className="footer">
             <div className="container">
                 <div className="footer-inner">
                     <div className="footer-brand">
@@ -48,7 +48,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className="footer-bar">
-                &copy; 2025 WaliaTaxi. All rights reserved. &nbsp;|&nbsp; Made with ❤️ in Punjab
+                &copy; 2025 WaliaTaxi. All rights reserved. &nbsp;|&nbsp; Made with <svg className="svg-icon" style={{ width: '18px', height: '18px', color: '#ef4444', fill: 'currentColor', margin: '0 4px' }} viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /></svg> in Punjab
             </div>
         </footer>
     );
