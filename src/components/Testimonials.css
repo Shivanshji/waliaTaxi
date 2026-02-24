@@ -1,0 +1,53 @@
+/* ===== TESTIMONIALS ===== */
+.testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.testi-card {
+    background: #FBF6EE;
+    border-radius: var(--border-r-card);
+    padding: 32px 28px;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s, box-shadow 0.25s;
+    border-left: 4px solid var(--amber);
+}
+
+.testi-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.testi-stars {
+    color: var(--amber);
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.testi-quote {
+    font-style: italic;
+    color: #4B5563;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    margin-bottom: 20px;
+}
+
+.testi-author {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--charcoal);
+}
+
+.testi-loc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+    .testi-grid {
+        grid-template-columns: 1fr;
+    }
+}
