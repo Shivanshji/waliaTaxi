@@ -21,6 +21,9 @@ export default function Footer() {
                             WaliaTaxi
                         </a>
                         <p>Your trusted cab partner across Punjab. Safe, punctual, and always available — 24 hours a day.</p>
+                        <p style={{ marginTop: '0.5rem', fontSize: '0.8rem', opacity: 0.7 }}>
+                            One-way taxi service from <strong>Jalandhar, Adampur, Phagwara, Dasuya, Tanda, Mukerian</strong> to Delhi Airport, Amritsar, Chandigarh &amp; all of Punjab. Tempo Traveller hire for Manali &amp; Shimla tours.
+                        </p>
                     </div>
                     <div className="footer-col">
                         <h4>Quick Links</h4>
@@ -29,6 +32,18 @@ export default function Footer() {
                                 const [href, label] = l.split(':');
                                 return <li key={label}><a href={href}>{label}</a></li>;
                             })}
+                        </ul>
+                    </div>
+                    <div className="footer-col">
+                        <h4>Areas We Serve</h4>
+                        <ul>
+                            {[
+                                'Jalandhar', 'Adampur', 'Phagwara', 'Dasuya',
+                                'Tanda', 'Mukerian', 'Hoshiarpur', 'Amritsar',
+                                'Chandigarh', 'Delhi Airport', 'Mohali', 'Zirakpur'
+                            ].map(city => (
+                                <li key={city} style={{ fontSize: '0.85rem' }}>{city}</li>
+                            ))}
                         </ul>
                     </div>
                     <div className="footer-col">
@@ -48,8 +63,9 @@ export default function Footer() {
                 </div>
             </div>
             <div className="footer-bar">
-                &copy; 2025 WaliaTaxi. All rights reserved. &nbsp;|&nbsp; Made with <svg className="svg-icon" style={{ width: '18px', height: '18px', color: '#ef4444', fill: 'currentColor', margin: '0 4px' }} viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /></svg> in Punjab
+                &copy; 2025 WaliaTaxi. All rights reserved. &nbsp;|&nbsp; Taxi service in Jalandhar, Adampur, Phagwara, Dasuya, Tanda &amp; Mukerian &nbsp;|&nbsp; Made with <svg className="svg-icon" style={{ width: '18px', height: '18px', color: '#ef4444', fill: 'currentColor', margin: '0 4px' }} viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /></svg> in Punjab
             </div>
         </footer>
     );
 }
+
