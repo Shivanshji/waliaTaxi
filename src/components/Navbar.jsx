@@ -39,7 +39,7 @@ export default function Navbar() {
                     <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
                     <li>
                         <a
-                            href="https://wa.me/919876543210"
+                            href="https://wa.me/919872200267"
                             className="btn btn-amber nav-cta"
                             target="_blank" rel="noopener noreferrer"
                             onClick={closeMenu}

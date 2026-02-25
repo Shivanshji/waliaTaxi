@@ -957,6 +957,84 @@ section {
 }
 
 /* ============================================================
+   BOOKING TOAST
+   ============================================================ */
+.booking-toast {
+  position: fixed;
+  bottom: 104px;
+  right: 24px;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--card-bg);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-r-card);
+  padding: 14px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary);
+  box-shadow: 0 8px 32px rgba(30, 58, 138, 0.12);
+  animation: toast-slide-in 0.3s ease;
+  max-width: 320px;
+}
+
+.booking-toast--success {
+  border-color: #22c55e;
+}
+
+.booking-toast--error {
+  border-color: var(--cta);
+}
+
+@keyframes toast-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .booking-toast {
+    left: 16px;
+    right: 16px;
+    bottom: 84px;
+    max-width: 100%;
+  }
+}
+
+/* ============================================================
+   BOOKING NOTE (trilingual info)
+   ============================================================ */
+.booking-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 32px;
+  padding: 16px;
+  background: var(--bg);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-r-card);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.booking-note strong {
+  color: var(--primary);
+}
+
+.booking-note svg {
+  color: var(--secondary);
+  margin-top: 2px;
+}
+
+/* ============================================================
    FOOTER
    ============================================================ */
 .footer {
@@ -1084,4 +1162,171 @@ section {
 .wa-float:focus-visible {
   outline: 3px solid var(--secondary);
   outline-offset: 2px;
+}
+
+/* ============================================================
+   STEP CONNECTOR (how-it-works)
+   ============================================================ */
+.step-connector {
+  display: none;
+  /* Hidden by default; can be shown on desktop if desired */
+}
+
+/* ============================================================
+   HERO DIVIDER (vertical bar between stats)
+   ============================================================ */
+.hero-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  align-self: center;
+}
+
+/* ============================================================
+   MOBILE — primary breakpoint (≤ 600px)
+   ============================================================ */
+@media (max-width: 600px) {
+
+  /* --- Sections --- */
+  section {
+    padding: 64px 0;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  /* --- Hero --- */
+  .hero {
+    padding: 100px 16px 64px;
+    min-height: 100svh;
+    /* use small viewport height on mobile to avoid address-bar issues */
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-btns .btn {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+
+  .hero-stats {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  /* Make hero stat dividers horizontal on small screens */
+  .hero-divider {
+    width: 60px;
+    height: 1px;
+    align-self: auto;
+  }
+
+  /* --- Contact info heading --- */
+  .contact-info h3 {
+    font-size: 1.5rem;
+  }
+
+  /* --- Fleet (reinforce single column, remove max-width cap) --- */
+  .fleet-grid {
+    max-width: 100%;
+  }
+
+  /* --- WhatsApp Float --- */
+  .wa-float {
+    bottom: 20px;
+    right: 16px;
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* ============================================================
+   MOBILE — narrow breakpoint (≤ 480px)
+   ============================================================ */
+@media (max-width: 480px) {
+
+  /* --- Sections --- */
+  section {
+    padding: 56px 0;
+  }
+
+  /* --- Typography scale --- */
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 48px;
+  }
+
+  /* --- Hero --- */
+  .hero-badge {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .hero-stats {
+    margin-top: 40px;
+    padding-top: 32px;
+    gap: 16px;
+    flex-direction: column;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  /* Hide dividers in column stat layout */
+  .hero-divider {
+    display: none;
+  }
+
+  /* --- Navbar mobile menu top offset --- */
+  .nav-links {
+    top: 64px;
+  }
+
+  /* --- Features --- */
+  .feature-card {
+    padding: 24px 20px;
+  }
+
+  /* --- Fleet cards --- */
+  .fleet-card {
+    padding: 28px 20px;
+  }
+
+  /* --- Testimonials --- */
+  .testi-card {
+    padding: 24px 20px;
+  }
+
+  /* --- Footer --- */
+  .footer {
+    padding: 56px 0 0;
+  }
+
+  .footer-inner {
+    gap: 28px;
+    padding-bottom: 40px;
+  }
+
+  .footer-brand {
+    max-width: 100%;
+  }
+
+  .footer-bar {
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 4px;
+    padding: 20px 16px;
+  }
+
+  /* --- WhatsApp Float --- */
+  .wa-float {
+    bottom: 16px;
+    right: 12px;
+    width: 52px;
+    height: 52px;
+  }
 }

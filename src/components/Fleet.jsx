@@ -73,7 +73,7 @@ export default function Fleet() {
                             </ul>
                             <span className="fleet-tag">{v.tag}</span>
                             <a
-                                href={`https://wa.me/919876543210?text=${v.wa}`}
+                                href={`https://wa.me/919872200267?text=${v.wa}`}
                                 className="btn btn-amber fleet-btn"
                                 target="_blank"
                                 rel="noopener noreferrer"

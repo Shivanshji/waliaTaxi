@@ -1,8 +1,9 @@
-import { useEffect, useRef } from 'react';
+import { Fragment, useEffect, useRef } from 'react';
+
 
 
 const steps = [
-    { num: 1, title: 'Call or WhatsApp Us', desc: 'Reach out anytime on +91 98765 43210 or message us on WhatsApp with your pickup details.' },
+    { num: 1, title: 'Call or WhatsApp Us', desc: 'Reach out anytime on +91 98722 00267 or message us on WhatsApp with your pickup details.' },
     { num: 2, title: 'We Confirm Your Ride', desc: 'Our team confirms the booking instantly, shares driver details, and gives you a fixed fare upfront.' },
     { num: 3, title: 'Driver Arrives On Time', desc: 'Your vetted driver arrives at your doorstep, ready to take you wherever you need to go.' },
 ];
@@ -32,14 +33,14 @@ export default function HowItWorks() {
                 <p className="section-subtitle fade-in">Booking your ride is as simple as 1-2-3. No app needed.</p>
                 <div className="steps-row fade-in">
                     {steps.map((s, i) => (
-                        <>
-                            <div className="step-item" key={s.num}>
+                        <Fragment key={s.num}>
+                            <div className="step-item">
                                 <div className="step-num">{s.num}</div>
                                 <h3>{s.title}</h3>
                                 <p>{s.desc}</p>
                             </div>
-                            {i < steps.length - 1 && <div className="step-connector" key={`c${i}`} />}
-                        </>
+                            {i < steps.length - 1 && <div className="step-connector" />}
+                        </Fragment>
                     ))}
                 </div>
             </div>

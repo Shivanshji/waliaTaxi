@@ -17,7 +17,7 @@ export default function Hero() {
                         Safe, punctual, and affordable taxi service from Jalandhar to every corner of Punjab and beyond.
                     </p>
                     <div className="hero-btns">
-                        <a href="https://wa.me/919876543210" className="btn btn-amber" target="_blank" rel="noopener noreferrer">
+                        <a href="https://wa.me/919872200267" className="btn btn-amber" target="_blank" rel="noopener noreferrer">
                             Book Now
                         </a>
                         <a href="#cities" className="btn btn-outline">View Our Routes</a>
