@@ -1,5 +1,9 @@
+# public/robots.txt
 User-agent: *
 Allow: /
-Disallow: /private/
 
-Sitemap: https://waliataxiservice.com/sitemap.xml
+# Block pages that should not be indexed
+Disallow: /thank-you
+Disallow: /admin
+
+Sitemap: https://waliataxi.com/sitemap.xml

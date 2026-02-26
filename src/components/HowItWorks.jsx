@@ -3,7 +3,7 @@ import { Fragment, useEffect, useRef } from 'react';
 
 
 const steps = [
-    { num: 1, title: 'Call or WhatsApp Us', desc: 'Reach out anytime on +91 98722 00267 or message us on WhatsApp with your pickup details.' },
+    { num: 1, title: 'Call or WhatsApp Us', desc: <>Reach out anytime on <a href="tel:+919872200267" style={{ color: 'inherit', textDecoration: 'underline' }}>+91 98722 00267</a> or message us on WhatsApp with your pickup details.</> },
     { num: 2, title: 'We Confirm Your Ride', desc: 'Our team confirms the booking instantly, shares driver details, and gives you a fixed fare upfront.' },
     { num: 3, title: 'Driver Arrives On Time', desc: 'Your vetted driver arrives at your doorstep, ready to take you wherever you need to go.' },
 ];

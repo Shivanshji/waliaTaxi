@@ -50,7 +50,7 @@ export default function Fleet() {
     return (
         <section id="services" className="fleet-section" ref={ref}>
             <div className="container">
-                <h2 className="section-title fade-in">Our Fleet</h2>
+                <h2 className="section-title fade-in">Cab Booking Options in Jalandhar</h2>
                 <span className="amber-line fade-in" />
                 <p className="section-subtitle fade-in">
                     Choose the vehicle that fits your journey, group size, and budget.

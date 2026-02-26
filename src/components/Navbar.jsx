@@ -27,9 +27,9 @@ export default function Navbar() {
     return (
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="nav-inner container">
-                <a href="#hero" className="logo">
+                <a href="#hero" className="logo" aria-label="WaliaTaxi - Home">
                     <TaxiLogo />
-                    WaliaTaxi
+                    <span>WaliaTaxi</span>
                 </a>
                 <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
                     <li><a href="#hero" onClick={closeMenu}>Home</a></li>
@@ -49,6 +49,7 @@ export default function Navbar() {
                     </li>
                 </ul>
                 <button
+                    type="button"
                     className="hamburger"
                     onClick={() => setMenuOpen(o => !o)}
                     aria-label="Toggle menu"

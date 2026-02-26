@@ -13,10 +13,10 @@ export default function Hero() {
                         WaliaTaxi – Jalandhar's #1 Service
                     </span>
                     <h1 className="hero-title">
-                        Your Trusted Ride<br />Across <span>Punjab</span>
+                        Reliable <span>Taxi in Jalandhar</span> — WaliaTaxi
                     </h1>
                     <p className="hero-sub">
-                        Safe, punctual, and affordable taxi service from Jalandhar to every corner of Punjab and beyond.
+                        Book affordable and punctual taxi service in Jalandhar. 24/7 cab booking for lacal trips, airport transfers, and outstation journeys across Punjab.
                     </p>
                 </div>
 

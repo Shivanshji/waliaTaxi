@@ -5,11 +5,11 @@
   /* Colors */
   --primary: #1E3A8A;
   /* Dark Blue */
-  --secondary: #3B82F6;
-  /* Sky Blue */
-  --cta: #F97316;
-  /* Booking Orange */
-  --cta-hover: #EA580C;
+  --secondary: #2563EB;
+  /* Darker Blue for contrast */
+  --cta: #92400E;
+  /* Amber 800/900 for high contrast (9.4:1) */
+  --cta-hover: #78350F;
   --bg: #EFF6FF;
   /* Very light blue background */
   --card-bg: #FFFFFF;
@@ -246,7 +246,7 @@ section {
 .nav-links li a {
   font-size: 0.95rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
+  color: white;
   transition: color var(--transition-fast);
 }
 
@@ -805,10 +805,11 @@ section {
   font-family: var(--font-display);
   font-size: 4rem;
   font-weight: 800;
-  color: var(--border-color);
+  color: var(--primary);
+  opacity: 0.15;
   line-height: 1;
   margin-bottom: 16px;
-  transition: color var(--transition-fast);
+  transition: all var(--transition-fast);
 }
 
 .step-item:hover .step-num {
@@ -1191,6 +1192,7 @@ section {
   font-weight: 600;
   color: var(--primary);
   box-shadow: 0 8px 32px rgba(30, 58, 138, 0.12);
+  will-change: transform, opacity;
   animation: toast-slide-in 0.3s ease;
   max-width: 320px;
 }
@@ -1283,7 +1285,7 @@ section {
 }
 
 .footer-brand p {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 0.95rem;
   line-height: 1.6;
 }
@@ -1301,7 +1303,7 @@ section {
 }
 
 .footer-col ul li a {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.85);
   transition: color var(--transition-fast);
   font-size: 0.95rem;
 }

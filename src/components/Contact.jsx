@@ -166,29 +166,29 @@ export default function Contact() {
                             <div className="form-row">
                                 <div className="form-group">
                                     <label htmlFor="fname">Full Name</label>
-                                    <input type="text" id="fname" placeholder="Your name" required />
+                                    <input type="text" id="fname" placeholder="Your name" required aria-label="Full Name" />
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="fphone">Phone Number</label>
-                                    <input type="tel" id="fphone" placeholder="+91 XXXXX XXXXX" required />
+                                    <input type="tel" id="fphone" placeholder="+91 XXXXX XXXXX" required aria-label="Phone Number" />
                                 </div>
                             </div>
                             <div className="form-row">
                                 <div className="form-group">
                                     <label htmlFor="ffrom">From</label>
-                                    <input type="text" id="ffrom" placeholder="Pickup city / area" required />
+                                    <input type="text" id="ffrom" placeholder="Pickup city / area" required aria-label="Pickup Location" />
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="fto">To</label>
-                                    <input type="text" id="fto" placeholder="Drop city / area" required />
+                                    <input type="text" id="fto" placeholder="Drop city / area" required aria-label="Drop Location" />
                                 </div>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="fdate">Travel Date</label>
-                                <input type="date" id="fdate" required />
+                                <input type="date" id="fdate" required aria-label="Travel Date" />
                             </div>
-                            <button type="submit" className="form-submit">
-                                <svg className="svg-icon" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z" /><path d="M22 2 11 13" /></svg>
+                            <button type="submit" className="form-submit" aria-label="Send Booking Request via WhatsApp">
+                                <svg className="svg-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z" /><path d="M22 2 11 13" /></svg>
                                 Send Booking Request
                             </button>
                         </form>

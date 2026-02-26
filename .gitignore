@@ -29,5 +29,11 @@ dist-ssr
 .windsurf
 .gemini
 
-# Research reports
+# Research and Audit reports
 public/deep-research-report*.md
+public/Combined_SEO_Audit_and_Metadata.md
+public/seoraicabs.txt
+hint-report/
+.seo/
+*.report.html
+AGENTS.md
