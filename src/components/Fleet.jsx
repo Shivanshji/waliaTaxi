@@ -1,35 +1,58 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-
-const vehicles = [
+const fleetData = [
     {
-        icon: <svg className="svg-icon" style={{ width: '40px', height: '40px' }} viewBox="0 0 24 24"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a2 2 0 0 0-1.6-.8H7.9a2 2 0 0 0-1.7 1z" /><circle cx="6.5" cy="16.5" r="2.5" /><circle cx="16.5" cy="16.5" r="2.5" /></svg>,
-        name: 'Sedan',
-        cap: 'Upto 4 Passengers • e.g., Maruti Dzire',
-        features: 'Air-conditioned • Ample boot space\nFuel-efficient • Best for city trips',
+        capacity: '5 Seater',
         tag: 'Most Popular',
-        wa: 'I%20want%20to%20book%20a%20Sedan',
+        models: [
+            { name: 'Dezire', image: '/images/cars/dzire.png', wa: 'I%20want%20to%20book%20a%205-seater%20Dezire' },
+            { name: 'Aura', image: '/images/cars/aura.png', wa: 'I%20want%20to%20book%20a%205-seater%20Aura' },
+            { name: 'Honda Amaze', image: '/images/cars/amaze.png', wa: 'I%20want%20to%20book%20a%205-seater%20Honda%20Amaze' },
+        ],
+        features: 'Air-conditioned • Ample boot space\nFuel-efficient • Best for city trips',
     },
     {
-        icon: <svg className="svg-icon" style={{ width: '40px', height: '40px' }} viewBox="0 0 24 24"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a2 2 0 0 0-1.6-.8H7.9a2 2 0 0 0-1.7 1z" /><circle cx="6.5" cy="16.5" r="2.5" /><circle cx="16.5" cy="16.5" r="2.5" /></svg>,
-        name: 'SUV',
-        cap: 'Upto 7 Passengers • e.g., Toyota Innova',
-        features: 'Spacious cabin • Long-distance comfort\nPremium feel • Ideal for families',
+        capacity: '7 Seater',
         tag: 'Best for Groups',
-        wa: 'I%20want%20to%20book%20an%20SUV',
+        models: [
+            { name: 'Ertiga', image: '/images/cars/ertiga.png', wa: 'I%20want%20to%20book%20a%207-seater%20Ertiga' },
+            { name: 'Kia Carens', image: '/images/cars/carens.png', wa: 'I%20want%20to%20book%20a%207-seater%20Kia%20Carens' },
+        ],
+        features: 'Spacious cabin • Long-distance comfort\nPremium feel • Ideal for families',
     },
     {
-        icon: <svg className="svg-icon" style={{ width: '40px', height: '40px' }} viewBox="0 0 24 24"><path d="M8 3v6M16 3v6M4 19v2M20 19v2M13 13h4M22 10v6c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2v-6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2Z" /><circle cx="7" cy="15" r="2" /><circle cx="17" cy="15" r="2" /></svg>,
-        name: 'Tempo Traveller',
-        cap: 'Upto 12 Passengers',
+        capacity: '8 Seater',
+        tag: 'Premium Travel',
+        models: [
+            { name: 'Innova Crysta', image: '/images/cars/innova.png', wa: 'I%20want%20to%20book%20an%208-seater%20Innova%20Crysta' },
+        ],
+        features: 'Extra comfort • Luxury seating\nSafe & reliable • Great for long trips',
+    },
+    {
+        capacity: '12 Seater',
+        tag: 'Large Group',
+        models: [
+            { name: 'FORCE TRAVELLER BUS', image: '/images/cars/traveller.png', wa: 'I%20want%20to%20book%20a%20FORCE%20TRAVELLER%20BUS,%20Seating%20Capacity:%2012%20Seater,%20Vehicle%20Model:%20G32-5' },
+            { name: 'Force Urbania', image: '/images/cars/urbania.png', wa: 'I%20want%20to%20book%20a%20Force%20Urbania%204400WB/12-Seater' },
+        ],
         features: 'Push-back seats • Large luggage space\nPerfect for tours • Weddings & events',
-        tag: 'Group Travel',
-        wa: 'I%20want%20to%20book%20a%20Tempo%20Traveller',
+    },
+    {
+        capacity: '17 Seater',
+        tag: 'Major Group',
+        models: [
+            { name: 'FORCE TRAVELLER BUS', image: '/images/cars/traveller.png', wa: 'I%20want%20to%20book%20a%20FORCE%20TRAVELLER%20BUS,%20Seating%20Capacity:%2017%20Seater,%20Vehicle%20Model:%20G32-5' },
+            { name: 'Force Urbania', image: '/images/cars/urbania.png', wa: 'I%20want%20to%20book%20a%20Force%20Urbania%204400WB/17-Seater' },
+        ],
+        features: 'Spacious seating • Fully Air-Conditioned\nProfessional Driver • Smooth touring',
     },
 ];
 
 export default function Fleet() {
     const ref = useRef(null);
+    const [selections, setSelections] = useState(
+        fleetData.reduce((acc, curr) => ({ ...acc, [curr.capacity]: curr.models[0] }), {})
+    );
 
     useEffect(() => {
         const els = ref.current?.querySelectorAll('.fade-in') || [];
@@ -47,41 +70,68 @@ export default function Fleet() {
         return () => obs.disconnect();
     }, []);
 
+    const handleModelChange = (capacity, modelName) => {
+        const category = fleetData.find(f => f.capacity === capacity);
+        const selectedModel = category.models.find(m => m.name === modelName);
+        setSelections(prev => ({ ...prev, [capacity]: selectedModel }));
+    };
+
     return (
         <section id="services" className="fleet-section" ref={ref}>
             <div className="container">
-                <h2 className="section-title fade-in">Cab Booking Options in Jalandhar</h2>
+                <h2 className="section-title fade-in">Our Fleet: Comfortable Travel Options</h2>
                 <span className="amber-line fade-in" />
                 <p className="section-subtitle fade-in">
-                    Choose the vehicle that fits your journey, group size, and budget.
+                    Pick your ideal seating capacity and choose from our premium vehicle range.
                 </p>
                 <div className="fleet-grid">
-                    {vehicles.map((v) => (
-                        <div className="fleet-card fade-in" key={v.name}>
-                            <div className="fleet-icon-wrapper">
-                                {v.icon}
+                    {fleetData.map((category) => {
+                        const current = selections[category.capacity];
+                        return (
+                            <div className="fleet-card fade-in" key={category.capacity}>
+                                <div className="fleet-tag-top">{category.tag}</div>
+                                <div className="fleet-img-container">
+                                    <img src={current.image} alt={current.name} className="fleet-car-image" />
+                                </div>
+
+                                <div className="fleet-info">
+                                    <h3>{category.capacity}</h3>
+
+                                    <div className="model-selector-wrapper">
+                                        <label htmlFor={`select-${category.capacity}`}>Select Model:</label>
+                                        <select
+                                            id={`select-${category.capacity}`}
+                                            value={current.name}
+                                            onChange={(e) => handleModelChange(category.capacity, e.target.value)}
+                                            className="fleet-select"
+                                        >
+                                            {category.models.map(m => (
+                                                <option key={m.name} value={m.name}>{m.name}</option>
+                                            ))}
+                                        </select>
+                                    </div>
+
+                                    <ul className="fleet-features">
+                                        {category.features.split('\n').map((f, i) => (
+                                            <li key={i}>
+                                                <svg className="svg-icon" style={{ width: '16px', height: '16px' }} viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>
+                                                {f}
+                                            </li>
+                                        ))}
+                                    </ul>
+
+                                    <a
+                                        href={`https://wa.me/919872200267?text=${current.wa}`}
+                                        className="btn btn-amber fleet-btn"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        Book {current.name}
+                                    </a>
+                                </div>
                             </div>
-                            <h3>{v.name}</h3>
-                            <p className="fleet-cap">{v.cap}</p>
-                            <ul className="fleet-features">
-                                {v.features.split('\n').map((f, i) => (
-                                    <li key={i}>
-                                        <svg className="svg-icon" style={{ width: '16px', height: '16px' }} viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>
-                                        {f}
-                                    </li>
-                                ))}
-                            </ul>
-                            <span className="fleet-tag">{v.tag}</span>
-                            <a
-                                href={`https://wa.me/919872200267?text=${v.wa}`}
-                                className="btn btn-amber fleet-btn"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Book This
-                            </a>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
             </div>
         </section>
