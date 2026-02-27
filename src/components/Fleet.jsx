@@ -182,6 +182,22 @@ export default function Fleet() {
                 .text-white-80 {
                     color: rgba(255, 255, 255, 0.8) !important;
                 }
+                .fleet-select {
+                    width: 100%;
+                    padding: 10px 12px;
+                    background: white !important;
+                    border: 1px solid #e2e8f0 !important;
+                    border-radius: 4px;
+                    color: var(--primary) !important;
+                    font-weight: 700 !important;
+                    font-size: 0.85rem;
+                    appearance: none;
+                    cursor: pointer;
+                }
+                .fleet-select:focus {
+                    border-color: var(--secondary) !important;
+                    outline: none;
+                }
                 .select-with-icon {
                     position: relative;
                 }
@@ -190,10 +206,11 @@ export default function Fleet() {
                     right: 12px;
                     top: 50%;
                     transform: translateY(-50%);
-                    width: 16px;
-                    height: 16px;
+                    width: 14px;
+                    height: 14px;
                     pointer-events: none;
-                    color: rgba(255, 255, 255, 0.5);
+                    color: var(--primary) !important;
+                    opacity: 0.7;
                 }
                 @media (max-width: 600px) {
                     .fleet-section {
