@@ -5,6 +5,7 @@ import Features from './components/Features';
 import Cities from './components/Cities';
 import HowItWorks from './components/HowItWorks';
 import Fleet from './components/Fleet';
+import Tours from './components/Tours';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -56,10 +57,11 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <Features />
-        <Cities />
-        <HowItWorks />
+        <Tours />
         <Fleet />
+        <Cities />
+        <Features />
+        <HowItWorks />
         <Testimonials />
         <FAQ />
         <Contact />

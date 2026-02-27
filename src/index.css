@@ -1409,35 +1409,7 @@ section {
   }
 }
 
-/* ============================================================
-   FLOATING WHATSAPP BUTTON (FLAT)
-   ============================================================ */
-.wa-float {
-  position: fixed;
-  bottom: 32px;
-  right: 32px;
-  z-index: 999;
-  width: 64px;
-  height: 64px;
-  background: #25D366;
-  border-radius: 4px;
-  /* Flat square/slightly rounded */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform var(--transition-fast), background var(--transition-fast);
-  color: white;
-}
 
-.wa-float:hover {
-  transform: translateY(-4px);
-  background: #128C7E;
-}
-
-.wa-float:focus-visible {
-  outline: 3px solid var(--secondary);
-  outline-offset: 2px;
-}
 
 /* ============================================================
    STEP CONNECTOR (how-it-works)
@@ -1510,14 +1482,6 @@ section {
   /* --- Fleet (reinforce single column, remove max-width cap) --- */
   .fleet-grid {
     max-width: 100%;
-  }
-
-  /* --- WhatsApp Float --- */
-  .wa-float {
-    bottom: 20px;
-    right: 16px;
-    width: 56px;
-    height: 56px;
   }
 }
 
@@ -1595,13 +1559,5 @@ section {
     text-align: center;
     gap: 4px;
     padding: 20px 16px;
-  }
-
-  /* --- WhatsApp Float --- */
-  .wa-float {
-    bottom: 16px;
-    right: 12px;
-    width: 52px;
-    height: 52px;
   }
 }

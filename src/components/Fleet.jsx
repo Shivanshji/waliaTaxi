@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import roadBg from '../assets/road.png';
 
 const fleetData = [
     {
@@ -78,10 +79,11 @@ export default function Fleet() {
 
     return (
         <section id="services" className="fleet-section" ref={ref}>
-            <div className="container">
-                <h2 className="section-title fade-in">Our Fleet: Comfortable Travel Options</h2>
+            <div className="fleet-overlay" />
+            <div className="container fleet-container">
+                <h2 className="section-title fade-in text-white">Our Fleet: Comfortable Travel Options</h2>
                 <span className="amber-line fade-in" />
-                <p className="section-subtitle fade-in">
+                <p className="section-subtitle fade-in text-white-80">
                     Pick your ideal seating capacity and choose from our premium vehicle range.
                 </p>
                 <div className="fleet-grid">
@@ -99,16 +101,21 @@ export default function Fleet() {
 
                                     <div className="model-selector-wrapper">
                                         <label htmlFor={`select-${category.capacity}`}>Select Model:</label>
-                                        <select
-                                            id={`select-${category.capacity}`}
-                                            value={current.name}
-                                            onChange={(e) => handleModelChange(category.capacity, e.target.value)}
-                                            className="fleet-select"
-                                        >
-                                            {category.models.map(m => (
-                                                <option key={m.name} value={m.name}>{m.name}</option>
-                                            ))}
-                                        </select>
+                                        <div className="select-with-icon">
+                                            <select
+                                                id={`select-${category.capacity}`}
+                                                value={current.name}
+                                                onChange={(e) => handleModelChange(category.capacity, e.target.value)}
+                                                className="fleet-select"
+                                            >
+                                                {category.models.map(m => (
+                                                    <option key={m.name} value={m.name}>{m.name}</option>
+                                                ))}
+                                            </select>
+                                            <svg className="select-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                <path d="M6 9l6 6 6-6" />
+                                            </svg>
+                                        </div>
                                     </div>
 
                                     <ul className="fleet-features">
@@ -134,6 +141,66 @@ export default function Fleet() {
                     })}
                 </div>
             </div>
+
+            <style dangerouslySetInnerHTML={{
+                __html: `
+                .fleet-section {
+                    position: relative;
+                    background-image: url(${roadBg});
+                    background-size: cover;
+                    background-position: center;
+                    background-attachment: fixed;
+                    padding: 96px 0;
+                    overflow: hidden;
+                    background-color: var(--primary);
+                }
+                .fleet-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: linear-gradient(rgba(30, 58, 138, 0.96) 0%, rgba(30, 58, 138, 0.8) 100%);
+                    z-index: 1;
+                }
+                .fleet-container {
+                    position: relative;
+                    z-index: 2;
+                }
+                .fleet-card {
+                    background: rgba(255, 255, 255, 0.08) !important;
+                    backdrop-filter: blur(8px);
+                    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+                }
+                .fleet-card:hover {
+                    background: rgba(255, 255, 255, 0.12) !important;
+                    border-color: var(--secondary) !important;
+                }
+                .text-white {
+                    color: white !important;
+                }
+                .text-white-80 {
+                    color: rgba(255, 255, 255, 0.8) !important;
+                }
+                .select-with-icon {
+                    position: relative;
+                }
+                .select-arrow {
+                    position: absolute;
+                    right: 12px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 16px;
+                    height: 16px;
+                    pointer-events: none;
+                    color: rgba(255, 255, 255, 0.5);
+                }
+                @media (max-width: 600px) {
+                    .fleet-section {
+                        background-attachment: scroll;
+                    }
+                }
+            ` }} />
         </section>
     );
 }

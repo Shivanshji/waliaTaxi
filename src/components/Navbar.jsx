@@ -33,8 +33,9 @@ export default function Navbar() {
                 </a>
                 <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
                     <li><a href="#hero" onClick={closeMenu}>Home</a></li>
-                    <li><a href="#cities" onClick={closeMenu}>Cities</a></li>
+                    <li><a href="#tours" onClick={closeMenu}>Tours</a></li>
                     <li><a href="#services" onClick={closeMenu}>Services</a></li>
+                    <li><a href="#cities" onClick={closeMenu}>Cities</a></li>
                     <li><a href="#about" onClick={closeMenu}>About</a></li>
                     <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
                     <li>
