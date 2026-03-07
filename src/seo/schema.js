@@ -85,7 +85,6 @@ export const localBusinessSchema = {
 }
 
 export const FAQSchema = (faqs) => ({
-    "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": faqs.map(f => ({
         "@type": "Question",

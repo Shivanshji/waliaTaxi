@@ -12,32 +12,10 @@ import Footer from './components/Footer';
 import WhatsAppFloat from './components/WhatsAppFloat';
 import SEOHead from './components/SEOHead';
 import FAQ from './components/FAQ';
+import { faqs } from './data/faqs';
 import { localBusinessSchema, FAQSchema } from './seo/schema';
 
 export default function App() {
-  const faqs = [
-    {
-      q: "How do I book a taxi in Jalandhar with WaliaTaxi?",
-      a: "You can book a taxi easily by calling us at +91-98722-00267 or by using our online booking form on the website. We offer 24/7 service."
-    },
-    {
-      q: "Do you provide airport transfers from Jalandhar?",
-      a: "Yes, we specialize in punctual airport transfers from Jalandhar to Delhi Airport (IGI), Amritsar Airport, and Chandigarh Airport at fixed rates."
-    },
-    {
-      q: "What are your taxi rates in Jalandhar?",
-      a: "Our rates are highly competitive. Local trips start at affordable prices, and we offer transparent pricing for outstation and airport journeys with no hidden costs."
-    },
-    {
-      q: "Is WaliaTaxi available for outstation trips from Jalandhar?",
-      a: "Absolutely! We provide reliable outstation cab services from Jalandhar to all major cities including Ludhiana, Amritsar, Chandigarh, and Delhi."
-    },
-    {
-      q: "Are your drivers verified and professional?",
-      a: "Yes, all our drivers are experienced professionals who are well-versed with routes across Punjab and neighboring states, ensuring a safe and comfortable ride."
-    }
-  ];
-
   const combinedSchema = {
     "@context": "https://schema.org",
     "@graph": [
