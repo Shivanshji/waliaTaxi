@@ -1,16 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-
-
-const TaxiLogo = () => (
-    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
-        <rect width="40" height="40" rx="10" fill="#F5A623" />
-        <path d="M8 25h24M10 25l2-7h16l2 7" stroke="#1A1A2E" strokeWidth="2" strokeLinecap="round" />
-        <path d="M14 18l1.5-5h9L26 18" stroke="#1A1A2E" strokeWidth="1.5" strokeLinecap="round" />
-        <circle cx="13" cy="27" r="2.5" fill="#1A1A2E" />
-        <circle cx="27" cy="27" r="2.5" fill="#1A1A2E" />
-        <path d="M20 14v-4M17 12h6" stroke="#1A1A2E" strokeWidth="1.5" strokeLinecap="round" />
-    </svg>
-);
+import { useEffect, useState } from 'react';
+import newLogo from '../assets/wa.png';
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
@@ -28,8 +17,19 @@ export default function Navbar() {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="nav-inner container">
                 <a href="#hero" className="logo" aria-label="WaliaTaxi - Home">
-                    <TaxiLogo />
-                    <span>WaliaTaxi</span>
+                    <img
+                        src={newLogo}
+                        alt="WaliaTaxi Logo"
+                        style={{
+                            height: scrolled ? '36px' : '44px',
+                            width: 'auto',
+                            aspectRatio: '1/1',
+                            objectFit: 'cover',
+                            borderRadius: '10px',
+                            flexShrink: 0,
+                            transition: 'height 0.3s ease'
+                        }}
+                    />
                 </a>
                 <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
                     <li><a href="#hero" onClick={closeMenu}>Home</a></li>

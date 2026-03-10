@@ -1,14 +1,4 @@
-
-
-const TaxiLogo = () => (
-    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="34" height="34">
-        <rect width="40" height="40" rx="10" fill="#F5A623" />
-        <path d="M8 25h24M10 25l2-7h16l2 7" stroke="#1A1A2E" strokeWidth="2" strokeLinecap="round" />
-        <path d="M14 18l1.5-5h9L26 18" stroke="#1A1A2E" strokeWidth="1.5" strokeLinecap="round" />
-        <circle cx="13" cy="27" r="2.5" fill="#1A1A2E" />
-        <circle cx="27" cy="27" r="2.5" fill="#1A1A2E" />
-    </svg>
-);
+import newLogo from '../assets/wa.png';
 
 export default function Footer() {
     return (
@@ -17,8 +7,17 @@ export default function Footer() {
                 <div className="footer-inner">
                     <div className="footer-brand">
                         <a href="#hero" className="logo footer-logo">
-                            <TaxiLogo />
-                            WaliaTaxi
+                            <img
+                                src={newLogo}
+                                alt="WaliaTaxi Logo"
+                                style={{
+                                    height: '44px',
+                                    width: 'auto',
+                                    aspectRatio: '1/1',
+                                    objectFit: 'cover',
+                                    borderRadius: '10px'
+                                }}
+                            />
                         </a>
                         <p>Your trusted cab partner across Punjab. Safe, punctual, and always available — 24 hours a day.</p>
                         <p style={{ marginTop: '0.5rem', fontSize: '0.8rem', opacity: 0.85 }}>
